@@ -4,8 +4,11 @@ $account = $_POST["account"];
 $password=md5($_POST["password"]);
 $email=$_POST["email"];
 $phone=$_POST["phone"];
-$sql="INSERT INTO user (account,password,email,phone,valid)
-VALUES ('$account','$password','$email','$phone',1)";
+$address=$_POST["address"];
+$job=$_POST["job"];
+$age=$_POST["age"];
+$sql="INSERT INTO user (account,password,email,phone,address,job,age,valid)
+VALUES ('$account','$password','$email','$phone','$address','$job','$age',1)";
 if ($conn->query($sql) === TRUE) {
     echo "新資料輸入成功";
     $last_id = $conn -> insert_id;
