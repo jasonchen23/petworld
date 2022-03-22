@@ -10,7 +10,7 @@ $age=$_POST["age"];
 $sql="INSERT INTO user (account,password,email,phone,address,job,age,valid)
 VALUES ('$account','$password','$email','$phone','$address','$job','$age',1)";
 if ($conn->query($sql) === TRUE) {
-    echo "新資料輸入成功";
+    echo "Signup Success";
     $last_id = $conn -> insert_id;
     echo "id : $last_id" ;
 } else {

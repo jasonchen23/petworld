@@ -7,23 +7,24 @@ if($conn -> query($sql) == TRUE) {
     $userCount=$result->num_rows;
 
     if($userCount>0) {
-        echo "success";
-        $user=$result->fetch_assoc();
-        $data=[
-            "account"=>$user["account"]
-        ];
-        $_SESSION["user"]=$data;
-        unset($_SESSION["error"]);
-        var_dump($_SESSION["user"]);
+        echo "Send Edit Email";
+        // $user=$result->fetch_assoc();
+        // $data=[
+        //     "account"=>$user["account"]
+        // ];
+        // $_SESSION["user"]=$data;
+        // unset($_SESSION["error"]);
+        // var_dump($_SESSION["user"]);
         // header("location: ./dashboard.php");
     } else {
-        echo "failed";
-        if(isset($_SESSION["error"]["times"])){
-            $_SESSION["error"]["times"]++ ;
-        } else{
-            $_SESSION["error"]["times"]=1;
-        }
-        $_SESSION["error"]["message"]="帳號或密碼錯誤";
+        echo "Wrong Email";
+        // if(isset($_SESSION["error"]["times"])){
+        //     $_SESSION["error"]["times"]++ ;
+        // } else{
+        //     $_SESSION["error"]["times"]=1;
+        // }
+        // $_SESSION["error"]["message"]="帳號或密碼錯誤";
+        // header("Location:./");
     };
     // header("location: ./login.php");
 } else{
